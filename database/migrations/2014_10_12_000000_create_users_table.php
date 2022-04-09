@@ -18,11 +18,8 @@ return new class extends Migration
             $table->string('fullname');
             $table->string('username')->unique();
             $table->string('password');
-            $table->unsignedBigInteger('company_id');
             $table->enum('role', \App\Enums\Role::getValuesArray())->default(\App\Enums\Role::USER->value);
-
             $table->foreignId('company_id')->index()->constrained()->cascadeOnDelete();
-
             $table->timestamps();
         });
     }
