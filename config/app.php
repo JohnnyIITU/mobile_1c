@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Facade;
 
 return [
 
+    'secret' => env('TOKEN_SECRET', 'Laravel'),
     /*
     |--------------------------------------------------------------------------
     | Application Name
