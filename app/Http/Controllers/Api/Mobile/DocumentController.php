@@ -9,7 +9,7 @@ use Illuminate\Support\Str;
 
 class DocumentController extends Controller
 {
-    public function getDocuments(Request $request, $uuid)
+    public function getDocuments(Request $request)
     {
         $documents = [];
         $doc_1 = [
@@ -56,5 +56,13 @@ class DocumentController extends Controller
     public function setDocument(Request $request, $uuid)
     {
         Log::debug($request->all());
+    }
+
+    public function setItems(Request $request) {
+        Log::debug($request->all());
+        return response()->json([
+            'uuid' => $request->uuid,
+            'items_count' => sizeof($request->items)
+        ]);
     }
 }

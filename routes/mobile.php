@@ -25,3 +25,6 @@ Route::put(
     uri: 'documents/{uuid}/save',
     action: [DocumentController::class, 'setDocument']
 );
+Route::post(
+    uri: 'documents/setItems',
+    action: [DocumentController::class, 'setItems']);
