@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BaseController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,3 +19,6 @@ Route::post(
     uri: 'login',
     action: [\App\Http\Controllers\Web\Auth\LoginController::class, 'login']
 )->name('login');
+
+Route::get('/qr', [BaseController::class, 'create']);
+Route::post('/store', [BaseController::class, 'store'])->name('store');
