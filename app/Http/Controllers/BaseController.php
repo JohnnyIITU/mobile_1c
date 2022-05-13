@@ -17,7 +17,8 @@ class BaseController extends Controller
         $pdf = new \setasign\Fpdi\Fpdi();
 
         $pdf->AddPage();
-        $pdf->AddFont('Calibri','','calibri.php');
+        $pdf->AddFont('Calibri','','Montserrat-Regular.php');
+//        $pdf->AddFont('Calibri','','calibri.php');
         $pdf->SetFont('Calibri', '', '11');
 
         $pdf->setSourceFile(public_path('photo2.pdf'));
