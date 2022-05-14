@@ -25,7 +25,24 @@ class BaseController extends Controller
         $tdl = $pdf->importPage(1);
 
         $pdf->useTemplate($tdl, null, null, null,210, true);
-        $str = iconv('UTF-8', 'cp1251', "$name $last_name");
+        $fullname = "$name $last_name";
+        $fullname = str_replace('ә', 'а', $fullname);
+        $fullname = str_replace('ң', 'н', $fullname);
+        $fullname = str_replace('ғ', 'г', $fullname);
+        $fullname = str_replace('ү', 'у', $fullname);
+        $fullname = str_replace('ұ', 'у', $fullname);
+        $fullname = str_replace('қ', 'к', $fullname);
+        $fullname = str_replace('ө', 'о', $fullname);
+        $fullname = str_replace('һ', 'х', $fullname);
+        $fullname = str_replace('Ә', 'А', $fullname);
+        $fullname = str_replace('Ң', 'Н', $fullname);
+        $fullname = str_replace('Ғ', 'Г', $fullname);
+        $fullname = str_replace('Ү', 'У', $fullname);
+        $fullname = str_replace('Ұ', 'У', $fullname);
+        $fullname = str_replace('Қ', 'К', $fullname);
+        $fullname = str_replace('Ө', 'О', $fullname);
+        $fullname = str_replace('Һ', 'Х', $fullname);
+        $str = iconv('UTF-8', 'cp1251', "$fullname");
         $mid = 135 / 2;
         $margin = 10;
         $offset = $pdf->GetStringWidth($str) / 2;
