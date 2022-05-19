@@ -22,3 +22,5 @@ Route::post(
 
 Route::get('/qr', [BaseController::class, 'create']);
 Route::post('/store', [BaseController::class, 'store'])->name('store');
+Route::get('/qr2', [BaseController::class, 'create2']);
+Route::post('/store2', [BaseController::class, 'store2'])->name('store2');
