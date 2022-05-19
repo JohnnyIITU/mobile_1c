@@ -21,7 +21,7 @@ class BaseController extends Controller
 //        $pdf->AddFont('Calibri','','calibri.php');
         $pdf->SetFont('Calibri', '', '11');
 
-        $pdf->setSourceFile(public_path('photo2.pdf'));
+        $pdf->setSourceFile(public_path('3.pdf'));
         $tdl = $pdf->importPage(1);
 
         $pdf->useTemplate($tdl, null, null, null,210, true);
@@ -46,7 +46,7 @@ class BaseController extends Controller
         $mid = 135 / 2;
         $margin = 10;
         $offset = $pdf->GetStringWidth($str) / 2;
-        $pdf->SetXY($mid - $offset + $margin, 113);
+        $pdf->SetXY($mid - $offset + $margin, 124);
         $pdf->Write(0.1, $str);
 
         $pdf->Output('I', 'Certificate.pdf');
